@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+:root {
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(0, 0%, 0%);
+  --gray-color: #333;
+  --accent-color: #ed563b;
+  --body-bg-color: #f0f0f0; /* Fondo del body más oscuro */
+  --body-font: "Poppins", sans-serif;
+  --h1-font-size: 1.5rem; /* Tamaño para el h1 */
+  --h2-font-size: 1.2rem; /* Tamaño más pequeño para el h2 */
+  --normal-font-size: 1rem;
+  --small-font-size: .813rem;
+  --font-medium: 500;
+  --message-color: var(--gray-color); /* Color del mensaje */
+  --input-border-color: var(--accent-color); /* Color de la línea debajo de los inputs */
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+input,
+button {
+  font-size: var(--normal-font-size);
+  font-family: var(--body-font);
+}
+
+body {
+  color: var(--gray-color);
+  background-color: var(--body-bg-color);
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilo del contenedor del header */
+.login__header {
+  position: relative;
+  text-align: center; /* Centrar el texto */
+  margin-bottom: 1.5rem; /* Espacio entre el header y el contenido */
+}
+
+.login__title,
+.login__subtitle {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 1; /* Asegurarse de que el texto esté encima del logo */
+  color: var(--white-color);
+  padding: 0 1rem;
+}
+
+.login__title {
+  top: 0.5rem; /* Ajustar la distancia desde la parte superior del contenedor (más cerca del borde) */
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-medium);
+}
+
+.login__subtitle {
+  top: 2rem; /* Ajustar la distancia desde el título (más cerca del logo) */
+  font-size: var(--h2-font-size);
+}
+
+/* Estilo del logo */
+.login__logo {
+  display: block;
+  width: 500px; /* Tamaño del logo ajustado */
+  background: transparent; /* Fondo transparente */
+  margin: 0 auto; /* Centrar el logo */
+  position: relative;
+  z-index: 0; /* Asegurarse de que el logo esté debajo del texto */
+  margin-top: -50px; /* Ajustar la distancia entre el logo y el borde superior del formulario */
+}
+
+/* Estilo del formulario */
+.login {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+}
+
+/* Efecto de movimiento y sombra para el formulario */
+.login:hover .login__form {
+  transform: scale(1.05); /* Aumenta el tamaño del formulario al pasar el mouse */
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5); /* Aumenta la sombra para el efecto de profundidad */
+}
+
+/* Estilo del formulario */
+.login__form {
+  position: relative;
+  background-color: var(--white-color);
+  margin-inline: 1.5rem;
+  padding: 2.5rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Sombra más fuerte */
+  text-align: center; /* Centrar el contenido dentro del formulario */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el efecto de movimiento y sombra */
+}
+
+/* Estilo del título del formulario */
+.login__title {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-medium);
+  color: var(--accent-color);
+  margin-bottom: 1rem; /* Espacio entre el título y el logo */
+}
+
+.login__subtitle {
+  font-size: var(--h2-font-size);
+  color: var(--gray-color);
+  margin-top: 6.5rem; /* Espacio entre el logo y el subtítulo */
+  margin-bottom: 1.5rem; /* Espacio entre el subtítulo y el contenido del formulario */
+}
+
+.login__content, .login__box {
+  display: grid;
+}
+
+.login__content {
+  row-gap: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.login__box {
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  column-gap: 0.75rem;
+  border-bottom: 2px solid var(--input-border-color); /* Cambiar color de la línea debajo de los inputs */
+}
+
+.login__icon, .login__eye {
+  font-size: 1.25rem;
+  color: var(--message-color); /* Cambiar color de los íconos */
+}
+
+.login__input {
+  width: 100%;
+  padding-block: 0.8rem;
+  background: none;
+  color: var(--gray-color);
+  position: relative;
+  z-index: 1;
+}
+
+.login__box-input {
+  position: relative;
+}
+
+.login__label {
+  position: absolute;
+  left: 0;
+  top: 13px;
+  font-weight: var(--font-medium);
+  color: var(--gray-color);
+  transition: top 0.3s, font-size 0.3s;
+}
+
+.login__eye {
+  position: absolute;
+  right: 0;
+  top: 18px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.login__box:nth-child(2) input {
+  padding-right: 1.8rem;
+}
+
+.login__check, .login__check-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login__check {
+  margin-bottom: 1.5rem;
+}
+
+.login__check-label, .login__forgot, .login__register {
+  font-size: var(--small-font-size);
+  color: var(--gray-color);
+}
+
+.login__check-group {
+  column-gap: 0.5rem;
+}
+
+.login__check-input {
+  width: 16px;
+  height: 16px;
+}
+
+.login__forgot {
+  color: var(--gray-color);
+}
+
+.login__forgot:hover {
+  text-decoration: underline;
+}
+
+/* Estilo del botón de inicio de sesión */
+.login__button {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el efecto de animación */
+}
+
+.login__button:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón al pasar el mouse */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Agrega una sombra para el efecto de profundidad */
+}
+
+.login__button:active {
+  transform: scale(0.95); /* Reduce el tamaño del botón al presionarlo */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce la sombra para simular un efecto de presionado */
+}
+
+.login__register {
+  text-align: center;
+  color: var(--message-color); /* Cambiar color del mensaje de registro */
+}
+
+.login__register a {
+  color: var(--accent-color);
+  font-weight: var(--font-medium);
+}
+
+.login__register a:hover {
+  text-decoration: underline;
+}
+
+.login__input:focus + .login__label {
+  top: -12px;
+  font-size: var(--small-font-size);
+}
+
+.login__input:not(:placeholder-shown).login__input:not(:focus) + .login__label {
+  top: -12px;
+  font-size: var(--small-font-size);
+}
+
+@media screen and (min-width: 576px) {
+  .login {
+    justify-content: center;
+  }
+  .login__form {
+    width: 432px;
+    padding: 2rem 3rem 3.5rem; /* Padding superior reducido */
+    border-radius: 1.5rem;
+  }
+  .login__title {
+    font-size: 1.75rem; /* Tamaño más pequeño en pantallas grandes */
+  }
+}
